@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Moto Rwanda • Destination</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main class="container">
+      <section class="card" style="max-width:840px;margin:0 auto">
+        <div class="row">
+          <h1 style="margin:0">Select destination</h1>
+          <span class="spacer"></span>
+          <a class="btn ghost" href="passenger_home.html">Back to map</a>
+        </div>
+
+        <div class="item hidden" data-flash style="margin-top:12px"></div>
+
+        <form data-destination-form style="margin-top:10px">
+          <div class="form-row">
+            <div>
+              <label>From</label>
+              <input name="from" placeholder="Your pickup point" required />
+            </div>
+            <div>
+              <label>Destination</label>
+              <input name="to" placeholder="Where to?" required />
+            </div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <button class="btn primary" type="submit">Request ride</button>
+            <span class="spacer"></span>
+            <span class="pill">Demo flow: Destination → Riders</span>
+          </div>
+        </form>
+
+        <div class="item" style="margin-top:14px">
+          <div style="font-weight:900;margin-bottom:8px">Quick destinations</div>
+          <div class="row">
+            <button class="btn small" type="button" data-quick="Kimironko Market">Kimironko Market</button>
+            <button class="btn small" type="button" data-quick="Kigali Convention Centre">KCC</button>
+            <button class="btn small" type="button" data-quick="Remera">Remera</button>
+            <button class="btn small" type="button" data-quick="Nyamirambo">Nyamirambo</button>
+          </div>
+        </div>
+      </section>
+      <div class="footer">Smart Moto Rwanda • Demo UI</div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/trips.js"></script>
+    <script>
+      SMR.mountHeader();
+      SMR_TRIPS.wireDestinationPage();
+
+      // Quick destination buttons
+      document.addEventListener("click", (e) => {
+        const b = e.target.closest("[data-quick]");
+        if (!b) return;
+        const to = b.getAttribute("data-quick");
+        const input = SMR.qs("[name=to]");
+        if (input) input.value = to;
+      });
+    </script>
+  </body>
+</html>
+

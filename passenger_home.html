@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Moto Rwanda • Passenger Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/map.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main class="container">
+      <div class="grid two">
+        <section class="card">
+          <div class="row">
+            <h1 style="margin:0">Passenger Home</h1>
+            <span class="spacer"></span>
+            <span class="pill">Map (demo)</span>
+          </div>
+          <div class="item hidden" data-flash style="margin-top:12px"></div>
+
+          <div class="map-shell" style="margin-top:12px">
+            <div class="map-top">
+              <span class="pill" data-position>Loading position...</span>
+              <span class="spacer"></span>
+              <button class="btn small" data-use-gps>Use my GPS</button>
+              <button class="btn small danger" data-emergency>Emergency</button>
+            </div>
+            <div class="map-canvas">
+              <div class="map-grid"></div>
+              <div class="pin" title="You"></div>
+              <div class="map-readout">
+                <div>
+                  <div style="font-weight:900">Next</div>
+                  <div class="subtle">Choose your destination to request a ride.</div>
+                </div>
+                <a class="btn primary" href="destination.html">Set destination</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2>Recent trips</h2>
+          <div class="list" data-last-trips></div>
+        </aside>
+      </div>
+
+      <div class="footer">Tip: Allow GPS for real coordinates.</div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/trips.js"></script>
+    <script>
+      SMR.mountHeader();
+      SMR.requireLogin();
+      SMR_MAP.wireMapPage();
+      SMR_TRIPS.wirePassengerHomeSidebar();
+    </script>
+  </body>
+</html>
+

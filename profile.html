@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Moto Rwanda • Profile</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main class="container">
+      <div class="grid two">
+        <section class="card">
+          <div class="row">
+            <h1 style="margin:0">Profile</h1>
+            <span class="spacer"></span>
+            <a class="btn small ghost" href="passenger_home.html">Back</a>
+          </div>
+          <div class="item hidden" data-flash style="margin-top:12px"></div>
+
+          <div class="item" style="margin-top:12px">
+            <div class="meta"><span class="pill">Account</span></div>
+            <div style="margin-top:10px">
+              <div><b>Name:</b> <span data-name></span></div>
+              <div class="subtle" style="margin-top:6px"><b>Phone:</b> <span data-phone></span></div>
+              <div class="subtle" style="margin-top:6px"><b>Role:</b> <span data-role></span></div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:12px">
+            <button class="btn danger" data-logout-now>Logout</button>
+            <span class="spacer"></span>
+            <a class="btn primary" href="destination.html">New trip</a>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2>My ratings</h2>
+          <div class="list" data-ratings></div>
+        </aside>
+      </div>
+
+      <div class="footer">Smart Moto Rwanda • Demo UI</div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/ratings.js"></script>
+    <script>
+      SMR.mountHeader();
+      const s = SMR.requireLogin();
+      if (s) {
+        SMR.qs("[data-name]").textContent = s.fullName;
+        SMR.qs("[data-phone]").textContent = s.phone;
+        SMR.qs("[data-role]").textContent = s.role;
+      }
+
+      const ratings = SMR_RATINGS.getRatings();
+      const host = SMR.qs("[data-ratings]");
+      if (host) {
+        if (!ratings.length) host.innerHTML = `<div class="subtle">No ratings yet.</div>`;
+        else {
+          host.innerHTML = ratings
+            .slice()
+            .reverse()
+            .slice(0, 10)
+            .map(
+              (r) => `
+                <div class="item">
+                  <div class="meta"><span>${new Date(r.at).toLocaleString()}</span><span>⭐ ${r.stars}</span></div>
+                  <div class="subtle" style="margin-top:6px">Trip: ${r.tripId} • Rider: ${r.riderId}</div>
+                  ${r.comment ? `<div style="margin-top:8px;font-weight:700">${r.comment}</div>` : ""}
+                </div>
+              `
+            )
+            .join("");
+        }
+      }
+
+      const logout = SMR.qs("[data-logout-now]");
+      if (logout) {
+        logout.addEventListener("click", () => {
+          SMR.clearSession();
+          location.href = "index.html";
+        });
+      }
+    </script>
+  </body>
+</html>
+

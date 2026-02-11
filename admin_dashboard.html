@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Moto Rwanda • Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <h1 style="margin:0">Admin dashboard</h1>
+          <span class="spacer"></span>
+          <span class="pill">Demo</span>
+        </div>
+        <div class="item hidden" data-flash style="margin-top:12px"></div>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px">
+          <div class="item"><div class="subtle">Users</div><div style="font-size:28px;font-weight:900" data-stat-users>0</div></div>
+          <div class="item"><div class="subtle">Riders</div><div style="font-size:28px;font-weight:900" data-stat-riders>0</div></div>
+          <div class="item"><div class="subtle">Trips</div><div style="font-size:28px;font-weight:900" data-stat-trips>0</div></div>
+        </div>
+
+        <div class="grid two" style="margin-top:12px">
+          <div class="item">
+            <h2>Latest trips</h2>
+            <div class="list" data-admin-trips></div>
+          </div>
+          <div class="item">
+            <h2>All users (demo)</h2>
+            <div class="list" data-admin-users></div>
+          </div>
+        </div>
+      </section>
+      <div class="footer">Admin is visible only for ADMIN role.</div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/trips.js"></script>
+    <script>
+      SMR.mountHeader();
+      const s = SMR.requireLogin();
+      if (s && s.role !== "ADMIN") {
+        SMR.setFlash("Access denied: admin only.", "error");
+        setTimeout(() => (location.href = "index.html"), 600);
+      }
+
+      (async () => {
+        const users = await SMR_AUTH.loadUsers();
+        const riders = await SMR_TRIPS.loadRiders();
+        const trips = await SMR_TRIPS.loadTrips();
+
+        SMR.qs("[data-stat-users]").textContent = users.length;
+        SMR.qs("[data-stat-riders]").textContent = riders.length;
+        SMR.qs("[data-stat-trips]").textContent = trips.length;
+
+        const uHost = SMR.qs("[data-admin-users]");
+        uHost.innerHTML = users
+          .slice()
+          .reverse()
+          .slice(0, 8)
+          .map((u) => `<div class="item"><div style="font-weight:900">${u.fullName}</div><div class="meta"><span>${u.phone}</span><span>${u.role}</span></div></div>`)
+          .join("");
+
+        const tHost = SMR.qs("[data-admin-trips]");
+        tHost.innerHTML = trips
+          .slice()
+          .reverse()
+          .slice(0, 8)
+          .map(
+            (t) => `
+              <div class="item">
+                <div class="meta"><span>${new Date(t.createdAt).toLocaleString()}</span><span>${t.status}</span></div>
+                <div style="margin-top:6px;font-weight:900">${t.from} → ${t.to}</div>
+                <div class="subtle" style="margin-top:6px">${t.rider ? "Rider: " + t.rider.name : "Rider: (none)"}</div>
+              </div>
+            `
+          )
+          .join("");
+      })();
+    </script>
+  </body>
+</html>
+

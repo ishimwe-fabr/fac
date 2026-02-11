@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Moto Rwanda • Navigation</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <h1 style="margin:0">Navigation / Trip</h1>
+          <span class="spacer"></span>
+          <a class="btn small ghost" href="communication.html">Back to chat</a>
+        </div>
+        <div class="item hidden" data-flash style="margin-top:12px"></div>
+
+        <div class="item" style="margin-top:12px">
+          <div class="meta">
+            <span class="pill">Active trip</span>
+            <span class="pill" data-progress>Loading...</span>
+          </div>
+          <div style="font-weight:900;margin-top:10px" data-trip-summary>Loading...</div>
+        </div>
+
+        <div class="row" style="margin-top:12px">
+          <button class="btn primary" data-start-trip>Start trip</button>
+          <button class="btn" data-step-trip>Step progress</button>
+          <span class="spacer"></span>
+          <button class="btn danger" data-cancel-trip>Cancel</button>
+          <button class="btn success" data-finish-trip>Finish trip</button>
+        </div>
+
+        <div class="item" style="margin-top:14px">
+          <div style="font-weight:900">Demo navigation hints</div>
+          <ul class="subtle" style="line-height:1.7;margin:10px 0 0 18px">
+            <li>Start trip to mark status as IN_PROGRESS.</li>
+            <li>Step progress to simulate movement.</li>
+            <li>Finish trip to go rate the rider.</li>
+          </ul>
+        </div>
+      </section>
+      <div class="footer">Smart Moto Rwanda • Demo UI</div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/trips.js"></script>
+    <script>
+      SMR.mountHeader();
+      SMR_TRIPS.wireNavigationPage();
+      const cancelBtn = SMR.qs("[data-cancel-trip]");
+      if (cancelBtn) {
+        cancelBtn.addEventListener("click", () => {
+          if (!confirm("Cancel this trip?")) return;
+          localStorage.removeItem(SMR.STORAGE_KEYS.activeTrip);
+          SMR.setFlash("Trip cancelled (demo).", "ok");
+          setTimeout(() => (location.href = "passenger_home.html"), 400);
+        });
+      }
+    </script>
+  </body>
+</html>
+
