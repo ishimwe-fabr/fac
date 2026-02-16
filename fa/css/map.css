@@ -1,0 +1,92 @@
+/* Map-specific styles for blue and white theme */
+
+.map-shell {
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.map-top {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.map-canvas {
+  height: 300px;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.map-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #28a745;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.pin:hover {
+  transform: scale(1.1);
+}
+
+.map-readout {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #cccccc;
+}
+
+.map-readout h3 {
+  margin-bottom: 10px;
+  color: #28a745;
+}
+
+/* Responsive map styles */
+@media (max-width: 768px) {
+  .map-canvas {
+    height: 250px;
+  }
+
+  .map-readout {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .map-top {
+    padding: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .map-top .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Moto Rwanda • Communication</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <a href="index.html">Smart Moto Rwanda</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="passenger_home.html">Passenger Home</a></li>
+          <li><a href="destination.html">Destination</a></li>
+          <li><a href="available_riders.html">Available Riders</a></li>
+          <li><a href="communication.html">Communication</a></li>
+          <li><a href="navigation.html">Navigation</a></li>
+          <li><a href="trip_completion.html">Trip Completion</a></li>
+          <li><a href="admin_dashboard.html">Admin Dashboard</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <div class="grid two">
+        <section class="card">
+          <div class="row">
+            <h1 style="margin:0">Call / Chat</h1>
+            <span class="spacer"></span>
+            <button class="btn small" data-call>Call (demo)</button>
+            <a class="btn small primary" href="navigation.html">Go to navigation</a>
+          </div>
+          <div class="item hidden" data-flash style="margin-top:12px"></div>
+
+          <div class="item" style="margin-top:12px">
+            <div class="pill" data-chat-summary>Chat</div>
+          </div>
+
+          <div class="list" data-chat-messages style="margin-top:12px"></div>
+
+          <form class="row" data-chat-form style="margin-top:12px">
+            <input name="message" placeholder="Type message..." />
+            <button class="btn success" type="submit">Send</button>
+          </form>
+        </section>
+
+        <aside class="card">
+          <h2>Next</h2>
+          <p class="subtle">After choosing a rider, you can start the trip simulation.</p>
+          <div class="row">
+            <a class="btn primary" href="navigation.html">Open navigation</a>
+            <a class="btn ghost" href="available_riders.html">Change rider</a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="footer">Smart Moto Rwanda • Demo UI</div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
+    <script>
+      SMR_CHAT.wireCommunicationPage();
+    </script>
+  </body>
+</html>
+
