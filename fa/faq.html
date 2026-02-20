@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - VoltHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Canvas for background animations -->
+    <canvas id="animationCanvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">VoltHub</span>
+            </div>
+            <nav class="nav">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="faq.html" class="nav-link active">FAQ</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="login.html" class="btn-repair">Request Repair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h1 class="page-title">Frequently Asked Questions</h1>
+            <p class="section-subtitle">Find answers to common questions about our services</p>
+
+            <div class="faq-container">
+                <!-- General Questions -->
+                <div class="faq-category">
+                    <h2 class="category-title">General Questions</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What services does VoltHub offer?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>VoltHub provides comprehensive electronics repair and maintenance services including laptop repair, desktop computer maintenance, smartphone repairs, and general electronic device troubleshooting. We handle hardware and software issues with expert technicians.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I request a repair?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can request a repair by clicking the "Request Repair" button on our website, filling out the repair request form with details about your device and issue, and our team will contact you to schedule an appointment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What is your response time?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We typically respond to repair requests within 24 hours. For urgent issues, we offer expedited service. Most repairs can be completed within 3-7 business days depending on the complexity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Payment -->
+                <div class="faq-category">
+                    <h2 class="category-title">Pricing & Payment</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How much do repairs cost?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Repair costs vary depending on the device type and issue complexity. We provide free diagnostic assessments to give you an accurate quote before any work begins. You're under no obligation to proceed with repairs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What payment methods do you accept?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept all major credit cards (Visa, Mastercard, American Express), debit cards, digital wallets, and bank transfers. Payment is due upon completion of repairs unless other arrangements are made.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do you offer refunds or warranty on repairs?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! All repairs come with a 90-day warranty on parts and labor. If your device has the same issue within 90 days, we'll fix it for free. Refunds are available if repair is not completed to your satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Questions -->
+                <div class="faq-category">
+                    <h2 class="category-title">Technical Questions</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Is my data safe during repairs?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we take data security very seriously. We never access personal data unless necessary for diagnosis and repair. All devices are handled with care and isolated from other equipment during service.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can you recover my lost data?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer data recovery services for devices with storage issues. Success rates depend on the severity of damage. Contact us for a free consultation about your specific situation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do you replace original parts or use compatible ones?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We primarily use original manufacturer parts. When original parts aren't available, we use high-quality compatible components that meet or exceed original specifications. We'll always inform you of parts quality before proceeding.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Policy Questions -->
+                <div class="faq-category">
+                    <h2 class="category-title">Policies & Other</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do you offer home pickup and delivery service?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! For repairs of high-value items, we offer free pickup and delivery service in our service area. Contact us to check if your location is covered or for delivery fee information.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What happens if my device can't be repaired?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>If repair isn't possible, we'll explain why clearly and discuss alternatives like upgrading or replacement recommendations. You'll only be charged for the diagnostic fee, and we can help dispose of your device safely.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Are you certified and insured?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! All our technicians are certified professionals with extensive training. VoltHub is fully insured and bonded, protecting both our customers and their devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <h2>Still have questions?</h2>
+                <p>Contact our support team for personalized assistance</p>
+                <a href="contact.html" class="btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>VoltHub</h4>
+                    <p>Expert Electronics Repair & Maintenance Services</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VoltHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

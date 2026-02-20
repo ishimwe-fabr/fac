@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Status - VoltHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Canvas for background animations -->
+    <canvas id="animationCanvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">VoltHub</span>
+            </div>
+            <nav class="nav">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="repair-status.html" class="nav-link active">Track Repair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Repair Status Section -->
+    <section class="repair-status-section">
+        <div class="container">
+            <h1 class="page-title">Track Your Repair</h1>
+            <p class="page-subtitle">Enter your repair order number to check the status</p>
+
+            <div class="status-tracker">
+                <!-- Search Form -->
+                <div class="status-search">
+                    <form class="search-form">
+                        <div class="search-input-group">
+                            <input type="text" id="order-number" placeholder="Enter Order Number (e.g., VH-2024-001234)" required>
+                            <button type="submit" class="btn-primary">Track Order</button>
+                        </div>
+                        <p class="search-hint">You can find your order number in the confirmation email we sent you.</p>
+                    </form>
+                </div>
+
+                <!-- Status Display -->
+                <div class="status-display" id="statusDisplay" style="display: none;">
+                    <div class="order-details">
+                        <h2>Order Details</h2>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Order Number:</span>
+                                <span class="detail-value" id="displayOrderNum">VH-2024-001234</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Device:</span>
+                                <span class="detail-value" id="displayDevice">Power Drill - DeWalt</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Order Date:</span>
+                                <span class="detail-value" id="displayOrderDate">February 1, 2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Status:</span>
+                                <span class="detail-value status-badge" id="displayStatus">In Progress</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="timeline">
+                        <h2>Repair Progress</h2>
+                        <div class="timeline-container">
+                            <div class="timeline-item completed">
+                                <div class="timeline-marker">✓</div>
+                                <div class="timeline-content">
+                                    <h3>Order Received</h3>
+                                    <p>Your repair request was received and confirmed.</p>
+                                    <span class="timeline-date">February 1, 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item completed">
+                                <div class="timeline-marker">✓</div>
+                                <div class="timeline-content">
+                                    <h3>Device Picked Up</h3>
+                                    <p>Our technician picked up your device from your location.</p>
+                                    <span class="timeline-date">February 2, 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item completed">
+                                <div class="timeline-marker">✓</div>
+                                <div class="timeline-content">
+                                    <h3>Diagnostics Complete</h3>
+                                    <p>We've completed the diagnosis. Quote sent to your email.</p>
+                                    <span class="timeline-date">February 2, 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item active">
+                                <div class="timeline-marker">⚡</div>
+                                <div class="timeline-content">
+                                    <h3>Repair In Progress</h3>
+                                    <p>Your device is currently being repaired by our technicians.</p>
+                                    <span class="timeline-date">Started February 3, 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">→</div>
+                                <div class="timeline-content">
+                                    <h3>Ready for Pickup</h3>
+                                    <p>Your device will be ready for pickup within 1-2 days.</p>
+                                    <span class="timeline-date">Estimated February 4-5, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repair Details -->
+                    <div class="repair-details">
+                        <h2>Repair Information</h2>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Device:</span>
+                                <span class="detail-value">DeWalt DCD791D2 Compact Drill</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Issue:</span>
+                                <span class="detail-value">Motor not working</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Estimated Cost:</span>
+                                <span class="detail-value">$89.99</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Warranty:</span>
+                                <span class="detail-value">90 days parts & labor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="contact-section">
+                        <h2>Questions?</h2>
+                        <p>If you have any questions about your repair, please contact us:</p>
+                        <div class="contact-methods">
+                            <a href="contact.html" class="btn-secondary">Contact Support</a>
+                            <a href="profile.html" class="btn-secondary">View Your Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <h2>❌ Order Not Found</h2>
+                    <p>We couldn't find an order with that number. Please check your order number and try again.</p>
+                    <p>If you need help, please <a href="contact.html">contact our support team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>📧 How do I get my order number?</h3>
+                    <p>Your order number was sent to your email when you submitted the repair request. Check your inbox or spam folder.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>⏱️ How long does repair take?</h3>
+                    <p>Most repairs take 3-7 business days, depending on the issue. We'll keep you updated with the progress.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>💳 When do I pay?</h3>
+                    <p>You'll receive a quote after diagnostics. Payment is due when you pick up your device.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>🔄 What's your warranty?</h3>
+                    <p>All repairs come with a 90-day warranty on parts and labor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 VoltHub. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

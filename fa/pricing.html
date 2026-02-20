@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - VoltHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Canvas for background animations -->
+    <canvas id="animationCanvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">VoltHub</span>
+            </div>
+            <nav class="nav">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="pricing.html" class="nav-link active">Pricing</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h1 class="page-title">Transparent Pricing</h1>
+            <p class="page-subtitle">No hidden fees. Fair prices for quality repairs.</p>
+
+            <!-- Pricing Info -->
+            <div class="pricing-info">
+                <div class="info-card">
+                    <h3>✓ Free Diagnostics</h3>
+                    <p>We offer free diagnostic service for all devices</p>
+                </div>
+                <div class="info-card">
+                    <h3>✓ No Surprises</h3>
+                    <p>You'll receive a quote before we start any repair</p>
+                </div>
+                <div class="info-card">
+                    <h3>✓ 90-Day Warranty</h3>
+                    <p>All repairs come with a 90-day warranty</p>
+                </div>
+            </div>
+
+            <!-- Service Pricing -->
+            <h2 class="section-title">Service Pricing Guide</h2>
+            <div class="pricing-grid">
+                <!-- Power Tools -->
+                <div class="pricing-card">
+                    <h3>🔨 Power Tool Repair</h3>
+                    <div class="pricing-list">
+                        <div class="pricing-item">
+                            <span class="service-name">Basic Inspection & Cleaning</span>
+                            <span class="price">$29.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Motor Replacement</span>
+                            <span class="price">$79.99 - $149.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Gear & Bearing Repair</span>
+                            <span class="price">$59.99 - $99.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Trigger & Switch Replacement</span>
+                            <span class="price">$39.99 - $59.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Cord & Plug Repair</span>
+                            <span class="price">$24.99 - $39.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Blade/Bit Assembly Replacement</span>
+                            <span class="price">$19.99 - $49.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electronics -->
+                <div class="pricing-card">
+                    <h3>💻 Electronics & Devices</h3>
+                    <div class="pricing-list">
+                        <div class="pricing-item">
+                            <span class="service-name">Laptop Diagnostics</span>
+                            <span class="price">Free (in-store)</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Screen Replacement</span>
+                            <span class="price">$79.99 - $199.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Battery Replacement</span>
+                            <span class="price">$49.99 - $129.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Motherboard Repair</span>
+                            <span class="price">$99.99 - $299.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Data Recovery</span>
+                            <span class="price">$149.99 - $499.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Software/Malware Removal</span>
+                            <span class="price">$39.99 - $99.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smartphones -->
+                <div class="pricing-card">
+                    <h3>📱 Smartphone Repairs</h3>
+                    <div class="pricing-list">
+                        <div class="pricing-item">
+                            <span class="service-name">Screen Repair</span>
+                            <span class="price">$99.99 - $299.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Battery Replacement</span>
+                            <span class="price">$49.99 - $99.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Charging Port Repair</span>
+                            <span class="price">$69.99 - $129.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Water Damage Service</span>
+                            <span class="price">$79.99 - $199.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Camera Replacement</span>
+                            <span class="price">$79.99 - $179.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Button/Speaker Repair</span>
+                            <span class="price">$39.99 - $79.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tablets -->
+                <div class="pricing-card">
+                    <h3>📱 Tablet Repairs</h3>
+                    <div class="pricing-list">
+                        <div class="pricing-item">
+                            <span class="service-name">Screen Replacement</span>
+                            <span class="price">$129.99 - $249.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Battery Replacement</span>
+                            <span class="price">$59.99 - $129.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Charging Port Repair</span>
+                            <span class="price">$79.99 - $149.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Logic Board Repair</span>
+                            <span class="price">$99.99 - $299.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Speaker/Microphone Fix</span>
+                            <span class="price">$49.99 - $99.99</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="service-name">Software Updates</span>
+                            <span class="price">$29.99 - $49.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="additional-services">
+                <h2>Additional Services & Fees</h2>
+                <div class="services-list">
+                    <div class="service-item">
+                        <h4>🚗 Pickup & Delivery Service</h4>
+                        <p><strong>$19.99</strong> per trip (within 10 miles) | Free on orders over $100</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>⏱️ Rush Service</h4>
+                        <p><strong>+50%</strong> of repair cost for same-day or next-day service</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>💾 Data Backup Service</h4>
+                        <p><strong>$29.99</strong> for devices under 100GB data</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>🔒 Extended Warranty</h4>
+                        <p><strong>$19.99</strong> adds 1 additional year of coverage (parts & labor)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Plans -->
+            <div class="payment-plans">
+                <h2>Payment Plans Available</h2>
+                <p>We offer flexible payment options for repairs over $200:</p>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <h3>Monthly Installment</h3>
+                        <p>Split payment into equal monthly installments</p>
+                        <p class="plan-detail">3-6 months available</p>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Pay Later</h3>
+                        <p>Pay within 30 days with no interest</p>
+                        <p class="plan-detail">On approved credit</p>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Credit Cards</h3>
+                        <p>We accept all major credit cards</p>
+                        <p class="plan-detail">Visa, Mastercard, AmEx</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="pricing-faq">
+                <h2>Pricing FAQ</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Is diagnostics free?</h3>
+                        <p>Yes! We offer completely free in-store diagnostics for all devices. No obligation to repair.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What's included in the warranty?</h3>
+                        <p>All repairs come with a 90-day warranty covering parts and labor. Extended warranties available.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I get a quote before repair?</h3>
+                        <p>Absolutely! We provide detailed quotes after diagnostics. You approve before any work begins.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Are there any hidden fees?</h3>
+                        <p>No hidden fees. All costs are transparent upfront. The quote you approve is the price you pay.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you offer discounts?</h3>
+                        <p>Yes! Check our current promotions or sign up for our newsletter for special offers.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I negotiate the price?</h3>
+                        <p>Our prices are competitive and fair. For large repairs or multiple devices, contact us for possible discounts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pricing-cta">
+                <h2>Ready to Get Your Device Repaired?</h2>
+                <p>Request a free diagnostic today and get a no-obligation quote</p>
+                <div class="cta-buttons">
+                    <a href="repair-request.html" class="btn-primary">Request Repair</a>
+                    <a href="contact.html" class="btn-secondary">Ask About Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 VoltHub. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

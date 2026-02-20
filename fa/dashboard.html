@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VoltHub Technician</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard-styles.css">
+</head>
+<body>
+    <!-- Canvas for background animations -->
+    <canvas id="animationCanvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">VoltHub</span>
+            </div>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="#repair-orders" class="nav-link">Repair Orders</a>
+                <a href="#inventory" class="nav-link">Inventory</a>
+                <a href="#schedule" class="nav-link">Schedule</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="login.html" class="nav-link">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="dashboard-welcome">
+        <div class="welcome-overlay">
+            <div class="welcome-content">
+                <h1>Welcome, Technician!</h1>
+                <p>Here are your latest updates and tools to manage your tasks efficiently.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Content -->
+    <section class="dashboard-main">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Messages Section -->
+                <div class="dashboard-card messages-card">
+                    <div class="card-header blue-header">
+                        <span class="card-icon">💬</span>
+                        <h2>Messages</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="message-item">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%233498db'/%3E%3C/svg%3E" alt="Daniel Ross" class="message-avatar">
+                            <div class="message-content">
+                                <h4>Daniel Ross</h4>
+                                <p>Repair update for R6-101</p>
+                            </div>
+                            <span class="message-time">Now</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%233498db'/%3E%3C/svg%3E" alt="Daniel Ross" class="message-avatar">
+                            <div class="message-content">
+                                <h4>Daniel Ross</h4>
+                                <p>Status update for R6-098</p>
+                            </div>
+                            <span class="message-time">2 hours ago</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%233498db'/%3E%3C/svg%3E" alt="Daniel Ross" class="message-avatar">
+                            <div class="message-content">
+                                <h4>Daniel Ross</h4>
+                                <p>New assignment: Oscilloscope repair</p>
+                            </div>
+                            <span class="message-time">Yesterday</span>
+                        </div>
+                    </div>
+                    <button class="view-all-btn">View All Messages</button>
+                </div>
+
+                <!-- Upload Request Section -->
+                <div class="dashboard-card upload-card">
+                    <div class="card-header yellow-header">
+                        <span class="card-icon">⬆️</span>
+                        <h2>Upload Request</h2>
+                    </div>
+                    <div class="card-body upload-body">
+                        <div class="form-group">
+                            <label>Device Name</label>
+                            <input type="text" placeholder="Device Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Issue Description</label>
+                            <textarea placeholder="Issue Description" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Upload Photos</label>
+                            <div class="file-upload">
+                                <span class="upload-icon">⬆️</span>
+                                <p>Drop files here or <span class="browse-link">browse</span></p>
+                                <p class="upload-hint">(up to 5 images)</p>
+                            </div>
+                        </div>
+                        <button class="submit-btn">Submit Request</button>
+                    </div>
+                </div>
+
+                <!-- Post Announcement Section -->
+                <div class="dashboard-card announcement-card">
+                    <div class="card-header blue-header">
+                        <span class="card-icon">📢</span>
+                        <h2>Post Announcement</h2>
+                    </div>
+                    <div class="card-body announcement-body">
+                        <textarea placeholder="What's new?" rows="6"></textarea>
+                        <button class="announcement-btn">Post Announcement</button>
+                    </div>
+                </div>
+
+                <!-- Account Management Section -->
+                <div class="dashboard-card account-card">
+                    <div class="card-header yellow-header">
+                        <span class="card-icon">⚙️</span>
+                        <h2>Account Management</h2>
+                    </div>
+                    <div class="card-body account-body">
+                        <div class="account-item">
+                            <span class="item-icon">👤</span>
+                            <span class="item-text">Edit Profile</span>
+                            <span class="arrow-icon">›</span>
+                        </div>
+                        <div class="account-item">
+                            <span class="item-icon">🔒</span>
+                            <span class="item-text">Reset Password</span>
+                            <span class="arrow-icon">›</span>
+                        </div>
+                        <div class="account-item">
+                            <span class="item-icon">🔔</span>
+                            <span class="item-text">Notification Settings</span>
+                            <span class="arrow-icon">›</span>
+                        </div>
+                        <button class="manage-account-btn">Manage Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 VoltHub. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard-script.js"></script>
+</body>
+</html>

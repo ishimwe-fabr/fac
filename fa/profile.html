@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - VoltHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Canvas for background animations -->
+    <canvas id="animationCanvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">VoltHub</span>
+            </div>
+            <nav class="nav">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="profile.html" class="nav-link active">Profile</a>
+                <a href="login.html" class="btn-repair">Request Repair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <h1 class="page-title">User Profile</h1>
+
+            <div class="profile-container">
+                <!-- Sidebar -->
+                <aside class="profile-sidebar">
+                    <div class="profile-card">
+                        <div class="profile-avatar">👤</div>
+                        <h3 class="profile-name">John Doe</h3>
+                        <p class="profile-role">Member</p>
+                        <button class="btn-primary full-width">Edit Profile</button>
+                        <button class="btn-secondary full-width">Change Password</button>
+                    </div>
+
+                    <nav class="profile-menu">
+                        <a href="#overview" class="profile-menu-item active">Overview</a>
+                        <a href="#repair-history" class="profile-menu-item">Repair History</a>
+                        <a href="#settings" class="profile-menu-item">Settings</a>
+                        <a href="#support" class="profile-menu-item">Support</a>
+                        <a href="home.html" class="profile-menu-item logout">Logout</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="profile-content">
+                    <!-- Overview Tab -->
+                    <div id="overview" class="profile-tab active">
+                        <h2>Account Overview</h2>
+                        
+                        <div class="profile-info-grid">
+                            <div class="info-card">
+                                <h4>Email</h4>
+                                <p>john.doe@example.com</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Location</h4>
+                                <p>New York, NY</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Member Since</h4>
+                                <p>January 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-section-card">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <span class="activity-date">2 days ago</span>
+                                    <span class="activity-text">Submitted repair request for laptop</span>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-date">1 week ago</span>
+                                    <span class="activity-text">Completed repair for desktop computer</span>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-date">2 weeks ago</span>
+                                    <span class="activity-text">Updated profile information</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repair History Tab -->
+                    <div id="repair-history" class="profile-tab">
+                        <h2>Repair History</h2>
+                        
+                        <div class="repairs-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Device</th>
+                                        <th>Issue</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Laptop Dell XPS</td>
+                                        <td>Battery not charging</td>
+                                        <td>Jan 15, 2026</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desktop PC</td>
+                                        <td>Power supply failure</td>
+                                        <td>Jan 8, 2026</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Smartphone</td>
+                                        <td>Screen replacement</td>
+                                        <td>Dec 28, 2025</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div id="settings" class="profile-tab">
+                        <h2>Settings</h2>
+                        
+                        <div class="settings-group">
+                            <h3>Notifications</h3>
+                            <div class="setting-item">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    Email notifications for repair updates
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    SMS notifications for urgent issues
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Privacy</h3>
+                            <div class="setting-item">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    Make profile visible to technicians
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label>
+                                    <input type="checkbox">
+                                    Allow marketing emails
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary">Save Settings</button>
+                    </div>
+
+                    <!-- Support Tab -->
+                    <div id="support" class="profile-tab">
+                        <h2>Support</h2>
+                        
+                        <div class="support-cards">
+                            <div class="support-card">
+                                <h3>🆘 Need Help?</h3>
+                                <p>Contact our support team for any issues or questions.</p>
+                                <a href="contact.html" class="btn-secondary">Contact Support</a>
+                            </div>
+                            <div class="support-card">
+                                <h3>❓ FAQ</h3>
+                                <p>Find answers to commonly asked questions.</p>
+                                <a href="faq.html" class="btn-secondary">View FAQ</a>
+                            </div>
+                            <div class="support-card">
+                                <h3>📋 Terms & Privacy</h3>
+                                <p>Read our terms of service and privacy policy.</p>
+                                <a href="terms.html" class="btn-secondary">View Terms</a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>VoltHub</h4>
+                    <p>Expert Electronics Repair & Maintenance Services</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VoltHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
